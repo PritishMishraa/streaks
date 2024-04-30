@@ -1,6 +1,6 @@
 # streaks
 
-Visulize your consistency
+Visualize your consistency
 
 ## Technologies Used
 

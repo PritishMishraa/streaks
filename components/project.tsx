@@ -6,54 +6,41 @@ import { useDisclosure } from "@nextui-org/modal";
 import { useState } from "react";
 import { AddIcon, DropdownIcon } from "./icons";
 import { NewProject } from "./newProject";
-
-type ProjectItem = {
-    title: string;
-    id: number;
-};
-
-const projects: ProjectItem[] = [
-    {
-        title: "All Projects",
-        id: 1,
-    },
-    {
-        title: "Work",
-        id: 2,
-    },
-    {
-        title: "GYM",
-        id: 3,
-    },
-];
+import { useProjectStore } from "@/lib/projectStore";
 
 export const Project = () => {
-    const [selectedProject, setSelectedProject] = useState(projects[0]);
+    const projects = useProjectStore((state) => state.projects);
+    const currentProject = useProjectStore((state) => state.currentProject);
+    const selectProject = useProjectStore((state) => state.selectProject);
+
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     return (
         <>
             <Dropdown>
                 <DropdownTrigger>
-                    <Button variant="bordered">
-                        {selectedProject.title} <DropdownIcon />
+                    <Button className="capitalize" variant="bordered">
+                        {currentProject.name} <DropdownIcon />
                     </Button>
                 </DropdownTrigger>
                 <DropdownMenu
                     aria-label="Project selection"
                     selectionMode="single"
-                    selectedKeys={[selectedProject.id]}
+                    selectedKeys={[currentProject.id]}
                     onSelectionChange={(keys) => {
+                        console.log(keys)
+                        console.log(projects)
                         // @ts-ignore
-                        const project = projects.find((project) => project.id === Number(keys.currentKey));
+                        const project = projects.find((project) => project.id === (keys.currentKey));
+                        console.log(project);
                         if (project) {
-                            setSelectedProject(project);
+                            selectProject(project.id);
                         }
                     }}
                 >
                     {projects.map((project) => (
-                        <DropdownItem key={project.id}>
-                            {project.title}
+                        <DropdownItem className="capitalize" key={project.id}>
+                            {project.name}
                         </DropdownItem>
                     ))}
                 </DropdownMenu>

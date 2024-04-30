@@ -1,6 +1,6 @@
 # Features
 
-- [ ] Trash icon - danger color
+- [X] Trash icon - danger color
 - [ ] Calculate streak info
 - [ ] Edit task (inline)
 - [ ] Delete Project (modal) (except 'All Projects')
@@ -15,6 +15,7 @@
 - [ ] Undo on today's completed tasks
 - [ ] Focus on text input in new project modal
 - [ ] Open Completed tab when a date is clicked on activity map
+- [ ] Emjoi picker in new project modal
 - [ ] Year drop down in activity map
 - [ ] Loading spinner after clicking Sign In button
 

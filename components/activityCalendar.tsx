@@ -33,7 +33,7 @@ export const TaskActivityCalendar = () => {
                 dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
             }}
             renderBlock={(block, activity) => (
-                <Tooltip content={`${activity.count} activities on ${format(new Date(activity.date), 'dd MMMM yyyy')}`}>
+                <Tooltip content={`${activity.count} tasks on ${format(new Date(activity.date), 'd MMM yyyy')}`}>
                     {block}
                 </Tooltip>
             )}

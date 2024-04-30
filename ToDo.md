@@ -1,0 +1,23 @@
+# Features
+
+- [ ] Trash icon - danger color
+- [ ] Calculate streak info
+- [ ] Edit task (inline)
+- [ ] Delete Project (modal) (except 'All Projects')
+- [ ] Edit Project (modal) (except 'All Projects')
+- [ ] Add database 
+- [ ] Host it
+
+# Up Next
+- [ ] Delay in checking off task
+- [ ] Mobile friendly design
+- [ ] Sort based on project in completed tab
+- [ ] Undo on today's completed tasks
+- [ ] Focus on text input in new project modal
+- [ ] Open Completed tab when a date is clicked on activity map
+- [ ] Year drop down in activity map
+- [ ] Loading spinner after clicking Sign In button
+
+# Later
+- [ ] Use slices instead of two stores
+- [ ] Settings page

@@ -11,7 +11,7 @@ export const LogButton = () => {
             className="text-sm font-normal text-default-600 bg-default-100"
             startContent={<HeartFilledIcon className="text-danger" />}
             variant="flat"
-            onClick={() => router.push('/dashboard')}
+            onClick={() => router.push('/login')}
         >
             Log In
         </Button>

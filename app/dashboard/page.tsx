@@ -3,8 +3,13 @@ import CreateTask from "@/components/createTask";
 import { Card, CardBody } from "@nextui-org/card";
 import StatsAndHistory from "@/components/statsAndHistory";
 import { TaskActivityCalendar } from "@/components/activityCalendar";
+import { auth } from "@/auth/auth";
+import { redirect } from "next/navigation";
 
-export default function AboutPage() {
+export default async function AboutPage() {
+	const session = await auth()
+	if (!session) redirect('/')
+
 	return (
 		<>
 			<div className="flex items-center gap-2">

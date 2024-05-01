@@ -68,3 +68,6 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 ### Later
 - [ ] Use slices instead of two stores
 - [ ] Settings page
+
+## Dev Time 
+![Wakapi Stats](https://wakapi.dev/api/badge/pritish__mishraa/interval:any/project:streaks)

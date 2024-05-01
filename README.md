@@ -48,6 +48,7 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
     - [X] Cascade delete all associated tasks
 - [X] Edit project name (modal) (except 'All Projects')
     - [X] Update project tag for tasks in 'Completed' tab
+- [X] Populate edit field with current project name (workaround?)
 - [ ] Add database 
 - [ ] Host it
 

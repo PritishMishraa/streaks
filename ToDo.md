@@ -1,8 +1,8 @@
 # Features
 
 - [X] Trash icon - danger color
-- [ ] Use as Guest
-- [ ] Persist data in local storage
+- [X] Use as Guest
+- [X] Persist data in local storage
 - [ ] Calculate streak info
 - [ ] Edit task (inline)
 - [ ] Delete Project (modal) (except 'All Projects')

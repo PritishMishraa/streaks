@@ -3,17 +3,18 @@
 import { Button } from "@nextui-org/button";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/dropdown";
 import { useDisclosure } from "@nextui-org/modal";
-import { useState } from "react";
-import { AddIcon, DropdownIcon } from "./icons";
+import { AddIcon, DropdownIcon, SettingsIcon } from "./icons";
 import { NewProject } from "./newProject";
 import { useProjectStore } from "@/lib/projectStore";
+import { EditProject } from "./editProject";
 
 export const Project = () => {
     const projects = useProjectStore((state) => state.projects);
     const currentProject = useProjectStore((state) => state.currentProject);
     const selectProject = useProjectStore((state) => state.selectProject);
 
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const newProjectModal = useDisclosure();
+    const editProjectModal = useDisclosure();
 
     return (
         <>
@@ -28,11 +29,8 @@ export const Project = () => {
                     selectionMode="single"
                     selectedKeys={[currentProject.id]}
                     onSelectionChange={(keys) => {
-                        console.log(keys)
-                        console.log(projects)
                         // @ts-ignore
                         const project = projects.find((project) => project.id === (keys.currentKey));
-                        console.log(project);
                         if (project) {
                             selectProject(project.id);
                         }
@@ -50,11 +48,23 @@ export const Project = () => {
                 isIconOnly
                 variant="solid"
                 aria-label="Add"
-                onPress={() => onOpen()}
+                onPress={() => newProjectModal.onOpen()}
             >
                 <AddIcon />
             </Button>
-            <NewProject isOpen={isOpen} onOpenChange={onOpenChange} />
+            {currentProject.id !== '1' &&
+                <Button
+                    className="text-small"
+                    isIconOnly
+                    variant="solid"
+                    aria-label="Add"
+                    onPress={() => editProjectModal.onOpen()}
+                >
+                    <SettingsIcon />
+                </Button>
+            }
+            <NewProject isOpen={newProjectModal.isOpen} onOpenChange={newProjectModal.onOpenChange} />
+            <EditProject isOpen={editProjectModal.isOpen} onOpenChange={editProjectModal.onOpenChange} />
         </>
     );
 };

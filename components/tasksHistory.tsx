@@ -1,17 +1,20 @@
-import { useShallow } from 'zustand/react/shallow'
-
-import { useTaskStore } from "@/lib/taskStore";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { format } from "date-fns";
 import { Checkbox } from '@nextui-org/checkbox';
+import { Card, CardBody } from "@nextui-org/card";
+
+import { useTaskStore } from "@/lib/taskStore";
 import { useProjectStore } from '@/lib/projectStore';
 
 export default function TasksHistory() {
-    const tasks = useTaskStore(useShallow((state) => state.tasks));
+    const tasks = useTaskStore((state) => state.tasks);
     const selectedDate = useTaskStore((state) => state.selectedDate);
     const changeSelectedDate = useTaskStore((state) => state.changeSelectedDate);
     const completedTasks = tasks.filter((task) => task.completed && new Date(task.date).toDateString() === new Date(selectedDate).toDateString());
-    const getProject = useProjectStore((state) => state.getProject);
+    const projects = useProjectStore((state) => state.projects);
+
+    function getProject(projectId: string) {
+        return projects.find((project) => project.id === projectId) || { id: '1', name: 'All Projects' };
+    }
 
     return (
         <div className="flex flex-col w-full h-full">

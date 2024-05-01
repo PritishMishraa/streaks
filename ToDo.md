@@ -1,6 +1,8 @@
 # Features
 
 - [X] Trash icon - danger color
+- [ ] Use as Guest
+- [ ] Persist data in local storage
 - [ ] Calculate streak info
 - [ ] Edit task (inline)
 - [ ] Delete Project (modal) (except 'All Projects')
@@ -14,6 +16,7 @@
 - [ ] Sort based on project in completed tab
 - [ ] Undo on today's completed tasks
 - [ ] Focus on text input in new project modal
+- [ ] Drag and drop tasks to reorder
 - [ ] Open Completed tab when a date is clicked on activity map
 - [ ] Emjoi picker in new project modal
 - [ ] Year drop down in activity map

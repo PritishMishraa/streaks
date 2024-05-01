@@ -4,7 +4,7 @@
 - [X] Use as Guest
 - [X] Persist data in local storage
 - [ ] Calculate streak info
-- [ ] Edit task (inline)
+- [x] Edit task (inline)
 - [ ] Delete Project (modal) (except 'All Projects')
 - [ ] Edit Project (modal) (except 'All Projects')
 - [ ] Add database 

@@ -1,7 +1,7 @@
 "use client";
 
-import Stats from "./stats";
-import CompletedTasks from "./completedTasks";
+import TaskStats from "./taskStats";
+import TasksHistory from "./tasksHistory";
 
 import { Tabs, Tab } from "@nextui-org/tabs";
 
@@ -12,10 +12,10 @@ export default function StatsAndHistory() {
                 panel: "p-0 h-full overflow-y-scroll"
             }}>
                 <Tab key="Stats" title="Stats" aria-label="Stats">
-                    <Stats />
+                    <TaskStats />
                 </Tab>
                 <Tab key="Completed" title="Completed" aria-label="Completed">
-                    <CompletedTasks />
+                    <TasksHistory />
                 </Tab>
             </Tabs>
         </div>

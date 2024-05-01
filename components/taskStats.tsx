@@ -3,7 +3,7 @@
 import { useTaskStore } from "@/lib/taskStore";
 import { Card, CardHeader } from "@nextui-org/card";
 
-export default function Stats() {
+export default function TaskStats() {
     const tasks = useTaskStore((state) => state.tasks);
     const completedTasks = tasks.filter((task) => task.completed);
 

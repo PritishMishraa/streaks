@@ -6,7 +6,7 @@ import { format } from "date-fns";
 import { Checkbox } from '@nextui-org/checkbox';
 import { useProjectStore } from '@/lib/projectStore';
 
-export default function CompletedTasks() {
+export default function TasksHistory() {
     const tasks = useTaskStore(useShallow((state) => state.tasks));
     const selectedDate = useTaskStore((state) => state.selectedDate);
     const changeSelectedDate = useTaskStore((state) => state.changeSelectedDate);

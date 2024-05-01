@@ -40,13 +40,14 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 ### On Going
 
 - [X] Trash icon - danger color
-- [X] Use as Guest
-- [X] Global state management with Zustand 
+- [X] Use as guest
 - [X] Persist data in local storage
 - [ ] Calculate streak info
-- [x] Edit task (inline)
-- [ ] Delete Project (modal) (except 'All Projects')
-- [ ] Edit Project (modal) (except 'All Projects')
+- [X] Edit task (inline)
+- [X] Delete project (modal) (except 'All Projects')
+    - [X] Cascade delete all associated tasks
+- [X] Edit project name (modal) (except 'All Projects')
+    - [X] Update project tag for tasks in 'Completed' tab
 - [ ] Add database 
 - [ ] Host it
 
@@ -57,7 +58,7 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 - [ ] Undo on today's completed tasks
 - [ ] Focus on text input in new project modal
 - [ ] Drag and drop tasks to reorder
-- [ ] Open Completed tab when a date is clicked on activity map
+- [ ] Open 'Completed' tab when a date is clicked on activity map
 - [ ] Emjoi picker in new project modal
 - [ ] Year drop down in activity map
 - [ ] Loading spinner after clicking Sign In button

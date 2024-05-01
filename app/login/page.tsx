@@ -1,5 +1,6 @@
 import { auth } from "@/auth/auth";
 import { GithubSignIn } from "@/components/githubSignIn";
+import { GuestSignIn } from "@/components/guestSignIn";
 import { Card, CardBody } from "@nextui-org/card";
 import { redirect } from "next/navigation";
 
@@ -9,8 +10,9 @@ export default async function AboutPage() {
 
     return (
         <Card>
-            <CardBody>
+            <CardBody className="gap-4">
                 <GithubSignIn />
+                <GuestSignIn />
             </CardBody>
         </Card>
     );

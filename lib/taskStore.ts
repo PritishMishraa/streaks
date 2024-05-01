@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type Task = {
     id: string
@@ -22,7 +23,7 @@ type TaskActions = {
     changeSelectedDate: (date: string) => void
 }
 
-export const useTaskStore = create<TaskState & TaskActions>()(set => ({
+export const useTaskStore = create<TaskState & TaskActions>()(persist(set => ({
     tasks: [],
     addTask: task => set(state => ({ tasks: [...state.tasks, task] })),
     removeTask: id => set(state => ({ tasks: state.tasks.filter(task => task.id !== id) })),
@@ -30,4 +31,6 @@ export const useTaskStore = create<TaskState & TaskActions>()(set => ({
 
     selectedDate: new Date().toISOString(),
     changeSelectedDate: date => set({ selectedDate: date })
-}))
+}),
+    { name: 'taskStore' }
+))

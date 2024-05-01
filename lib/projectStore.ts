@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type Project = {
     id: string
@@ -18,7 +19,7 @@ type ProjectActions = {
     getProject: (id: string) => Project
 }
 
-export const useProjectStore = create<ProjectState & ProjectActions>()((set, get) => ({
+export const useProjectStore = create<ProjectState & ProjectActions>()(persist((set, get) => ({
     projects: [{
         id: '1',
         name: 'All Projects'
@@ -35,4 +36,6 @@ export const useProjectStore = create<ProjectState & ProjectActions>()((set, get
     selectProject: id => set(state => ({ currentProject: state.projects.find(project => project.id === id) })),
 
     getProject: id => get().projects.find(project => project.id === id) || { id: '1', name: 'All Projects' }
-}))
+}),
+    { name: 'projectStore' }
+))

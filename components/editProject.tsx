@@ -5,7 +5,7 @@ import { useTaskStore } from "@/lib/taskStore";
 import { Button } from "@nextui-org/button";
 import { Input } from "@nextui-org/input";
 import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const EditProject = ({ isOpen, onOpenChange }: {
     isOpen: boolean;
@@ -21,6 +21,10 @@ export const EditProject = ({ isOpen, onOpenChange }: {
 
     const [newProjectName, setNewProjectName] = useState<string>("");
 
+    useEffect(() => {
+        setNewProjectName(currentProject.name);
+    }, [currentProject]);
+    
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewProjectName(e.target.value);
     };

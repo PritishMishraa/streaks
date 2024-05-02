@@ -43,7 +43,7 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 - [X] Trash icon - danger color
 - [X] Use as guest
 - [X] Persist data in local storage
-- [ ] Calculate streak info
+- [X] Calculate streak
 - [X] Edit task (inline)
 - [X] Delete project (modal) (except 'All Projects')
     - [X] Cascade delete all associated tasks

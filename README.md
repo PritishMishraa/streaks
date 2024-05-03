@@ -50,6 +50,8 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 - [X] Edit project name (modal) (except 'All Projects')
     - [X] Update project tag for tasks in 'Completed' tab
 - [X] Populate edit field with current project name (workaround?)
+- [X] Save current tab in URL search params
+- [X] Open 'Completed' tab when a date is clicked on activity map
 - [ ] Add database 
 - [ ] Host it
 
@@ -60,7 +62,6 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 - [ ] Undo on today's completed tasks
 - [ ] Focus on text input in new project modal
 - [ ] Drag and drop tasks to reorder
-- [ ] Open 'Completed' tab when a date is clicked on activity map
 - [ ] Emjoi picker in new project modal
 - [ ] Year drop down in activity map
 - [ ] Loading spinner after clicking Sign In button

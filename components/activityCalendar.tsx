@@ -8,6 +8,7 @@ import ActivityCalendar from "react-activity-calendar";
 import { cloneElement, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import { useIsSSR } from "@react-aria/ssr";
+import { useRouterTabs } from "@/hooks/useRouterTabs";
 
 const getLevel = (count: number) => {
     if (count === 0) return 0;
@@ -18,6 +19,7 @@ const getLevel = (count: number) => {
 };
 
 export const TaskActivityCalendar = () => {
+    const { tabValue, setTabValue } = useRouterTabs("tab");
     const [isLoading, setIsLoading] = useState(true); // Loading state
     useEffect(() => {
         // Simulate loading delay
@@ -77,6 +79,9 @@ export const TaskActivityCalendar = () => {
             eventHandlers={{
                 onClick: (_event) => (activity) => {
                     changeSelectedDate(activity.date);
+                    if (tabValue !== 'Completed') {
+                        setTabValue('Completed');
+                    }
                 }
             }}
         />

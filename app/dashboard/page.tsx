@@ -1,11 +1,14 @@
+import { Card, CardBody } from "@nextui-org/card";
+
+import { auth } from "@/auth/auth";
 import { Project } from "@/components/project";
 import CreateTask from "@/components/createTask";
-import { Card, CardBody } from "@nextui-org/card";
 import StatsAndHistory from "@/components/statsAndHistory";
 import { TaskActivityCalendar } from "@/components/activityCalendar";
 
 export default async function AboutPage() {
-
+	const session = await auth();
+	console.log(session);
 	return (
 		<>
 			<div className="flex items-center gap-2">

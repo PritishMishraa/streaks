@@ -17,13 +17,13 @@ export default function Profile({ session }: { session: DefaultSession }) {
                         src={session.user?.image || undefined}
                     />
                 </DropdownTrigger>
-                <DropdownMenu aria-label="Profile Actions" variant="flat">
+                <DropdownMenu aria-label="Profile Actions" variant="flat" disabledKeys={["info"]}>
                     <DropdownItem key="profile" className="gap-2 h-14">
                         <p className="font-semibold">Signed in as</p>
                         <p className="font-semibold">{session.user?.email}</p>
                     </DropdownItem>
-                    <DropdownItem key="settings">
-                        My Settings
+                    <DropdownItem key="info">
+                        Your data is saved locally.
                     </DropdownItem>
                     <DropdownItem key="logout" color="danger">
                         <SignOut />

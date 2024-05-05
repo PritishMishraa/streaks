@@ -1,6 +1,7 @@
 import { signIn } from "@/auth/auth"
 import { Button } from "@nextui-org/button"
 import { GithubIcon } from "./icons"
+import { Tooltip } from "@nextui-org/tooltip"
 
 export function GithubSignIn() {
     return (
@@ -10,7 +11,9 @@ export function GithubSignIn() {
                 await signIn("github", { redirectTo: "/dashboard" })
             }}
         >
-            <Button className="w-full" startContent={<GithubIcon />} type="submit">Signin with GitHub</Button>
+            <Tooltip content="Work In Progress">
+                <Button disabled className="w-full" startContent={<GithubIcon />} type="submit">Signin with GitHub</Button>
+            </Tooltip>
         </form>
     )
 } 

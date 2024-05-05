@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./public/image.png">
+</div>
+
 # streaks
 
 Visualize your consistency
@@ -37,6 +41,15 @@ public-hoist-pattern[]=*@nextui-org/*
 
 After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
 
+### .env
+
+```bash
+AUTH_SECRET=
+AUTH_GITHUB_ID=
+AUTH_GITHUB_SECRET=
+DATABASE_URL="file:./data.db"
+```
+
 ## Roadmap
 ### On Going
 
@@ -52,7 +65,7 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 - [X] Populate edit field with current project name (workaround?)
 - [X] Save current tab in URL search params
 - [X] Open 'Completed' tab when a date is clicked on activity map
-- [ ] Add database 
+- [ ] Clean up
 - [ ] Host it
 
 ### Up Next
@@ -72,3 +85,6 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 
 ## Dev Time 
 ![Wakapi Stats](https://wakapi.dev/api/badge/pritish__mishraa/interval:any/project:streaks)
+
+## Resources
+[Zustand best practices](https://tkdodo.eu/blog/working-with-zustand)

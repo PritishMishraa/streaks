@@ -65,8 +65,8 @@ DATABASE_URL="file:./data.db"
 - [X] Populate edit field with current project name (workaround?)
 - [X] Save current tab in URL search params
 - [X] Open 'Completed' tab when a date is clicked on activity map
-- [ ] Clean up
-- [ ] Host it
+- [X] Clean up
+- [X] Host it
 
 ### Up Next
 - [ ] Delay in checking off task
